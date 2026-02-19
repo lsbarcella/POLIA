@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>SAE26_AI43_POR_C07_OA1</title> <!--Mudar o código-->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <script src="resources/js/library/phaser.min.js"></script>
+    <style href="resources/css/game.css"></style>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Nunito-ExtraBold';
+            src: url('resources/fonts/Nunito-ExtraBold.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            src: url('resources/fonts/Nunito-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Nunito-SemiBold';
+            src: url('resources/fonts/Nunito-SemiBold.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Nunito-Bold';
+            src: url('resources/fonts/Nunito-Bold.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Nunito-Black';
+            src: url('resources/fonts/Nunito-Black.ttf') format('truetype');
+        }
+
+
+        html,
+        body {
+            height: 100%;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font: caption;
+            overflow: hidden;
+        }
+
+        #SAE26_AI43_POR_C07_OA1 {
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            max-width: 100vw;
+            max-height: 100vh;
+            width: auto;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            display: block;
+        }
+
+        #loading {
+            font-family: Nunito-ExtraBold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            display: none;
+            /* Hidden by default */
+        }
+    </style>
+
+    <script type="module">
+        import { Boot } from './resources/js/library/base/Boot.js';
+        import { Preload } from './resources/game/cenas/Preload.js';
+        import { Capa } from './resources/game/cenas/Capa.js';
+        import { Intro } from './resources/game/cenas/Intro.js';
+        import { Game } from './resources/game/cenas/Game.js';
+        import { ControladorDeCenas } from './resources/js/library/managers/ControladorDeCenas.js';
+        import SoundManager from './resources/js/library/managers/SoundManager.js';
+
+        const config = {
+            type: Phaser.AUTO,
+            width: 1920,
+            height: 1080,
+            backgroundColor: '#000',
+            scale: {
+                mode: Phaser.Scale.FIT,
+                parent: 'SAE26_AI43_POR_C07_OA1', // Mudar o código
+                width: 1920,
+                height: 1080,
+                autoCenter: Phaser.Scale.CENTER_BOTH,
+                autoRound: true,
+                expandParent: true
+            },
+            scene: [Boot, Preload, Capa,Intro, Game],
+            audio: {
+                disableWebAudio: false
+            },
+            dom: {
+                createContainer: true
+            },
+            callbacks: {
+                postBoot: function (game) {
+                    SoundManager.init(game);
+                }
+            },
+            render: {
+                antialias: true,
+                pixelArt: false
+            }
+        };
+
+        const game = new Phaser.Game(config);
+
+        // Inicializa o controlador de cenas com um array de cenas
+        const cenas = [
+            { key: 'Capa', scene: new Capa(null) },
+            { key: 'Intro', scene: new Intro(null) },
+            { key: 'Game', scene: new Game(null) }
+        ];
+
+        // Cria o controlador
+        const controladorDeCenas = new ControladorDeCenas(game, cenas);
+
+        // Importante: Atribui o controlador ao objeto game
+        game.controladorDeCenas = controladorDeCenas;
+
+        // Passa o controlador de cenas para cada cena
+        cenas.forEach(cena => {
+            cena.scene.controladorDeCenas = controladorDeCenas;
+            game.scene.add(cena.key, cena.scene);
+        });
+
+        SoundManager.init(game);
+
+        // Registra o SoundManager no game registry para acesso global
+        game.registry.set('SoundManager', SoundManager);
+
+        const ajustarEscala = () => {
+            // Aguarda um pouco mais para o iPhone processar a mudança de orientação
+            setTimeout(() => {
+                const isPortrait = window.innerHeight > window.innerWidth;
+
+                // Remove a condição que esconde o canvas em telas pequenas
+                // Isso pode estar causando problemas no iPhone
+                game.canvas.style.display = 'block';
+
+                // Força o refresh da escala com um pequeno delay
+                setTimeout(() => {
+                    game.scale.refresh();
+                    // Força o recálculo da posição central
+                    game.scale.setGameSize(1920, 1080);
+                }, 100);
+            }, 100);
+        };
+
+        // Aumenta os timeouts para dar mais tempo ao iPhone processar
+        window.addEventListener('resize', () => setTimeout(ajustarEscala, 500));
+        window.addEventListener('orientationchange', () => setTimeout(ajustarEscala, 800));
+
+        // Adiciona listener específico para mudanças de orientação no iOS
+        if (window.orientation !== undefined) {
+            window.addEventListener('orientationchange', () => {
+                setTimeout(ajustarEscala, 1000);
+            });
+        }
+
+        window.addEventListener('load', ajustarEscala);
+
+
+    </script>
+
+</head>
+
+<body id="SAE26_AI43_POR_C07_OA1"> <!--Mudar o código-->
+    <h2 style="display: none;">Descubra o Poder dos Adjetivos!</h2> <!--Colocar o nome do ODA-->
+    <div id="loading">Carregando...</div> <!-- Loading indicator -->
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+{
+    "configuracoes": {
+        "marca": "SAE",
+        "codigo": "ARCO",
+        "musica": {
+            "src": "Bossa_Antigua.mp3",
+            "volume": 0.25
+        }
+    },
+    "creditos": [
+        {
+            "titulo": "Créditos de Imagem",
+            "texto": "upklyak/freepik.com; \nImagem gerada por IA/Adobe Firefly."
+        },
+        {
+            "titulo": "Créditos de SOM",
+            "texto": "\"Bossa Antigua\"  Kevin MacLeod CC BY 4.0 /incompetech.com; ElevenLabs/voz e efeitos sonoros gerados por Inteligência Artificial"
+        }
+    ],
+    "orientacaoMetodologica": [
+        {
+            "titulo": "ORIENTAÇÃO METODOLÓGICA",
+            "texto": ""
+        }
+    ],
+    "paginas": [
+        {
+            "enunciado": {
+                "titulo": "",
+                "texto": "",
+                "codNarracao": ""
+            }
+        },
+        {
+            "enunciado": {
+                "titulo": "",
+                "texto": "",
+                "codNarracao": ""
+            },
+            "orientacaoProfessor": {
+                "titulo": "",
+                "texto": ""
+            }
+        }
+    ]
+}
