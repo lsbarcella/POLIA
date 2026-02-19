@@ -13,7 +13,7 @@ export class Capa extends BaseCena {
     create() {
         const background = this.add.image(0, 0, 'bgCapa').setOrigin(0, 0);
         const marca = ColorManager.getCurrentMarca(this);
-        const colors = ColorManager.getColors(marca, ColorManager.BLUE);
+        const colors = ColorManager.getColors(marca, ColorManager.YELLOW);
 
         const btIniciar = new Button(this, {
            text: 'INICIAR',
@@ -21,8 +21,8 @@ export class Capa extends BaseCena {
            colors: colors
         });
 
-        btIniciar.x = background.x + (background.width - btIniciar.width) / 2;
-        btIniciar.y = 782;
+        btIniciar.x = (background.width - btIniciar.width / 2) / 2;
+        btIniciar.y = 830;
 
         btIniciar.on('buttonClick', () => {
            this.controladorDeCenas.proximaCena();

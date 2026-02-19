@@ -13,6 +13,42 @@ export class Boot extends Phaser.Scene {
         // Intro
         this.load.image('bgIntro1', './resources/images/intro/intro-1.png');
 
+        // Task
+        this.load.image('taskInfoIntro', './resources/images/task/info.png')
+        this.load.image('taskIconSelected', './resources/images/task/target-icon.png')
+        this.load.image('taskIcon', './resources/images/task/target-icon-unselected.png')
+        this.load.image('taskIconBg', './resources/images/task/icon-bg.png')
+
+        // Help
+        this.load.image('helpModalBg', './resources/images/help/modal-bg.png')
+        this.load.image('helpBotao', './resources/images/help/botao.png')
+        this.load.image('helpConteudo1', './resources/images/help/conteudo-1.png')
+        this.load.image('helpConteudo2', './resources/images/help/conteudo-2.png')
+        this.load.image('helpConteudo3', './resources/images/help/conteudo-3.png')
+
+        // Tutorial
+        this.load.image('tutorialHand', './resources/images/tutorial/hand.png')
+
+        // Feedback
+        this.load.image('feedbackAcerto', './resources/images/feedback/acerto.png')
+
+        // Score
+        this.load.image('scoreModalBg', './resources/images/score/modal-bg.png')
+        this.load.image('score1Star', './resources/images/score/1-star.png')
+        this.load.image('score2Stars', './resources/images/score/2-star.png')
+        this.load.image('score3Stars', './resources/images/score/3-star.png')
+
+        // Objects
+        this.load.image('objectsCaixa', './resources/images/objects/caixa.png')
+        this.load.image('objectsCorda', './resources/images/objects/corda.png')
+        this.load.image('objectsElipse', './resources/images/objects/elipse.png')
+        this.load.image('objectsPoliaFixa', './resources/images/objects/polia-fixa.png')
+        this.load.image('objectsPolia', './resources/images/objects/polia.png')
+        this.load.image('objectsSidebar', './resources/images/objects/sidebar.png')
+        this.load.image('objectsGancho', './resources/images/objects/gancho.png')
+        this.load.image('objectsFoco', './resources/images/objects/foco.png')
+        this.load.image('objectsFocoPequeno', './resources/images/objects/foco-pequeno.png')
+
 
         this.load.image('btSoundOn', './resources/images/hud/btSonsNormal.png'); // Botão de som ligado
         this.load.image('btSoundOff', './resources/images/hud/btSonsMutado.png'); //

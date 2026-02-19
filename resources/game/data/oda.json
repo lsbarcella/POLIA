@@ -3,18 +3,18 @@
         "marca": "SAE",
         "codigo": "ARCO",
         "musica": {
-            "src": "Bossa_Antigua.mp3",
+            "src": "Starting_Out_Waltz_Vivace.mp3",
             "volume": 0.25
         }
     },
     "creditos": [
         {
             "titulo": "Créditos de Imagem",
-            "texto": "upklyak/freepik.com; \nImagem gerada por IA/Adobe Firefly."
+            "texto": "FourLeafLover/stock.adobe.com;  \nImagem gerada por IA/Gemini, OpenAI; Mariana Fontoura."
         },
         {
             "titulo": "Créditos de SOM",
-            "texto": "\"Bossa Antigua\"  Kevin MacLeod CC BY 4.0 /incompetech.com; ElevenLabs/voz e efeitos sonoros gerados por Inteligência Artificial"
+            "texto": "\"Starting Out Waltz Vivace\"  Kevin MacLeod CC BY 4.0 /incompetech.com; ElevenLabs/voz e efeitos sonoros gerados por Inteligência Artificial"
         }
     ],
     "orientacaoMetodologica": [
