@@ -38,7 +38,6 @@ export class DraggableButton extends Phaser.GameObjects.Image {
         this.on('dragstart', (pointer) => {
             this.isDragging = true;
             this.setDepth(1000);
-            this.setTint(0xFFE8BE);
             this.setScale(this.baseScale);
             scene.input.setDefaultCursor('grabbing');
 
@@ -54,7 +53,6 @@ export class DraggableButton extends Phaser.GameObjects.Image {
 
         this.on('dragend', (pointer) => {
             this.isDragging = false;
-            this.clearTint();
             this.setDepth(100);
             this.setScale(this.baseScale);
             scene.input.setDefaultCursor('default');
@@ -79,7 +77,6 @@ export class DraggableButton extends Phaser.GameObjects.Image {
 
     forceDragEnd() {
         this.isDragging = false;
-        this.clearTint();
         this.setDepth(100);
 
         if (this.onDragEndCallback) {

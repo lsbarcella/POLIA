@@ -12,6 +12,7 @@ export class Boot extends Phaser.Scene {
         
         // Intro
         this.load.image('bgIntro1', './resources/images/intro/intro-1.png');
+        this.load.image('iconePuxarCorda', './resources/images/intro/icone-puxar-corda.png');
 
         // Task
         this.load.image('taskInfoIntro', './resources/images/task/info.png')
@@ -31,6 +32,7 @@ export class Boot extends Phaser.Scene {
 
         // Feedback
         this.load.image('feedbackAcerto', './resources/images/feedback/acerto.png')
+        this.load.image('feedbackErro', './resources/images/feedback/erro.png')
 
         // Score
         this.load.image('scoreModalBg', './resources/images/score/modal-bg.png')
@@ -40,7 +42,11 @@ export class Boot extends Phaser.Scene {
 
         // Objects
         this.load.image('objectsCaixa', './resources/images/objects/caixa.png')
+        this.load.image('objectsCaixaAmarrada', './resources/images/objects/caixa-amarrada.png')
         this.load.image('objectsCorda', './resources/images/objects/corda.png')
+        this.load.image('objectsCordaCaixa', './resources/images/objects/corda-caixa.png')
+        this.load.image('objectsCordaPolia', './resources/images/objects/corda-polia.png')
+        this.load.image('objectsPegadorCorda', './resources/images/objects/pegador-corda.png')
         this.load.image('objectsElipse', './resources/images/objects/elipse.png')
         this.load.image('objectsPoliaFixa', './resources/images/objects/polia-fixa.png')
         this.load.image('objectsPolia', './resources/images/objects/polia.png')
